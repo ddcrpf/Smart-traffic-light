@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Traffic Light Management App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            z-index: 1;
+            background: none; /* Remove background */
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: white;
+            font-weight: 600;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2); /* Translucent input background */
+            color: white;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.4); /* Slightly more visible on focus */
+        }
+
+        .button-27 {
+            appearance: none;
+            background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent button */
+            border: 2px solid #1A1A1A;
+            border-radius: 15px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0;
+            min-height: 60px;
+            outline: none;
+            padding: 16px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            user-select: none;
+            width: 100%;
+            will-change: transform;
+        }
+
+        .button-27:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+            background-color: rgba(0, 86, 179, 0.8); /* Maintain translucency on hover */
+        }
+
+        .button-27:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+        spline-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.32/build/spline-viewer.js"></script>
+    <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/vXqZkbHZDWoIWeq6/scene.splinecode"></spline-viewer>
+
+    <form method="POST" action="{{ url_for('auth.login') }}">
+        <label>Username</label>
+        <input type="text" name="username" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <button class="button-27" type="submit">Login</button>
+    </form>
+
+</body>
+</html>

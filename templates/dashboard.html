@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Junctions</h1>
+    <ul>
+        {% for junction in junctions %}
+        <li><a href="{{ url_for('dashboard.view_junction', id=junction.id) }}">{{ junction.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
